@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.2.3/css/bootstrap.min.css}">
+    <script th:src="@{/webjars/bootstrap/5.2.3/js/bootstrap.min.js}"></script>
+    <title>Title</title>
+</head>
+<body>
+    <h1>Heroes</h1>
+    <button th:href="@{/heroes/create}">add hero</button>
+    <table>
+        <thead>
+            <th>id</th>
+            <th>name</th>
+            <th>latitude</th>
+            <th>longitude</th>
+            <th>phone</th>
+            <th>incident 1</th>
+            <th>incident 2</th>
+            <th>incident 3</th>
+        </thead>
+    </table>
+    <tr th:each="hero: ${heroes}">
+        <td th:text="${hero.id}"></td>
+        <td th:text="${hero.name}"></td>
+        <td th:text="${hero.latitude}"></td>
+        <td th:text="${hero.longitude}"></td>
+        <td th:text="${hero.phone}"></td>
+        <td th:text="${hero.incident1}"></td>
+        <td th:text="${hero.incident2}"></td>
+        <td th:text="${hero.incident3}"></td>
+    </tr>
+</body>
+</html>
